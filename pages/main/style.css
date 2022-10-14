@@ -23,7 +23,7 @@ footer {
   text-align: center;
 }
 .wrapper {
-  max-width: 1160px;
+  max-width: 1220px;
   margin: 0 auto;
 }
 .active-menu-item {
@@ -95,9 +95,13 @@ button {
 
 /* 1600px */
 /* header section */
-header,
+/* header,
 main,
 footer {
+  padding-left: 30px;
+  padding-right: 30px;
+} */
+.wrapper {
   padding-left: 30px;
   padding-right: 30px;
 }
@@ -106,7 +110,9 @@ header {
   z-index: 2;
 }
 header .wrapper {
-  padding: 14px 0;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  /* padding: 14px 0; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -161,7 +167,6 @@ header .wrapper {
 .watch {
   position: relative;
   margin-top: -80px;
-  padding-top: 80;
 }
 .watch::before {
   position: absolute;
@@ -179,7 +184,6 @@ header .wrapper {
   justify-content: flex-end;
   height: 780px;
   overflow: hidden;
-  width: 95%;
 }
 .watch_body {
   display: flex;
@@ -232,7 +236,6 @@ header .wrapper {
   display: flex;
   padding-top: 140px;
   justify-content: space-between;
-  width: 95%;
 }
 .backstage_image_container {
   width: 609px;
@@ -687,7 +690,6 @@ header .wrapper {
 .range input {
   width: 599px;
   height: 8px;
-  -webkit-appearance: none;
   background-color: #f5f7f6;
   border: 1px solid #fe9013;
   border-radius: 5px;
@@ -905,9 +907,6 @@ input[type='range']::-webkit-slider-thumb {
 
 /* common for 1000px */
 @media (max-width: 1250px) {
-  .wrapper {
-    /* max-width: 940px; */
-  }
   /* header section */
   .menu_body li a {
     margin-right: 48px;
@@ -920,9 +919,6 @@ input[type='range']::-webkit-slider-thumb {
     background-position-y: 0;
     margin-top: -80px;
     padding-top: 80px;
-  }
-  .watch .wrapper {
-    width: 95%;
   }
   .watch .wrapper {
     height: 504px;
@@ -1043,22 +1039,17 @@ input[type='range']::-webkit-slider-thumb {
   }
 }
 
-/* for header section 1000px */
-/* for pet cards slider 1000px */
-@media (max-width: 1005px) {
-  /* common styles */
-  .wrapper {
-    /* max-width: 940px; */
-  }
-}
-
 @media (max-width: 855px) {
-  header,
+  /* header,
   main,
   footer {
     padding-left: 20px;
     padding-right: 20px;
-  }
+  } */
+  /* .wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  } */
   /* header section */
   .menu_body {
     margin-left: 0;
@@ -1081,7 +1072,7 @@ input[type='range']::-webkit-slider-thumb {
   }
   .backstage article {
     margin-right: 120px;
-    padding-left: 5px;
+    padding-left: 0;
   }
   .backstage h2 {
     margin-top: 0;
@@ -1096,7 +1087,6 @@ input[type='range']::-webkit-slider-thumb {
   }
   .step:nth-of-type(-n + 2) .step_img:after {
     background: url(../../assets/icons/arrow_tablet.svg) 50% no-repeat;
-    /* border: 1px solid red; */
     width: 95px;
     height: 35px;
     top: -20px;
@@ -1148,6 +1138,10 @@ input[type='range']::-webkit-slider-thumb {
 
 /* common 640px */
 @media (max-width: 755px) {
+  .wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   /* header section */
   header {
     position: fixed;
@@ -1156,8 +1150,10 @@ input[type='range']::-webkit-slider-thumb {
     width: 100%;
     z-index: 10;
   }
+
   header .wrapper {
-    padding: 0;
+    padding-top: 0;
+    padding-bottom: 0;
   }
   header .logo {
     z-index: 5;
@@ -1201,7 +1197,7 @@ input[type='range']::-webkit-slider-thumb {
     width: 38px;
     height: 34px;
     cursor: pointer;
-    border: 10px solid #111115;
+    border: 10px solid transparent;
     border-bottom-width: 13px;
     border-top-width: 11px;
     padding: 5px;
@@ -1214,7 +1210,7 @@ input[type='range']::-webkit-slider-thumb {
     position: absolute;
     height: 18%;
     width: 100%;
-    transition: all 0.3s ease 0s;
+    transition: all 0.3s;
     background-color: #fff;
   }
   .burger_icon::before,
@@ -1233,9 +1229,6 @@ input[type='range']::-webkit-slider-thumb {
   .burger_icon span {
     top: 50%;
     transform: scale(1) translate(0px, -50%);
-  }
-  .burger_icon._active {
-    border-color: #fff;
   }
   .burger_icon._active span,
   .burger_icon._active::before,
@@ -1265,7 +1258,7 @@ input[type='range']::-webkit-slider-thumb {
     align-items: flex-start;
     text-align: left;
     overflow: auto;
-    transition: all 0.3s ease 0s;
+    transition: all 0.3s;
   }
   .menu_body ul {
     background-color: #fff;
@@ -1278,7 +1271,6 @@ input[type='range']::-webkit-slider-thumb {
   }
   .menu_body._active::before {
     background-color: #fff;
-    transition: all 0.3s;
   }
   .menu_body._active {
     left: 0;
@@ -1309,7 +1301,7 @@ input[type='range']::-webkit-slider-thumb {
   .watch p {
     font-size: 5.43rem;
     width: 255px;
-    margin-right: 0;
+    margin-right: -3px;
     align-self: flex-end;
     margin-bottom: 0;
   }
@@ -1322,7 +1314,7 @@ input[type='range']::-webkit-slider-thumb {
   }
   .watch .button1 {
     align-self: flex-start;
-    margin-left: 5px;
+    margin-left: 0;
     margin-top: -7px;
   }
 
@@ -1521,6 +1513,10 @@ input[type='range']::-webkit-slider-thumb {
 
 /* common 320px */
 @media (max-width: 550px) {
+  .wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
   /* header section */
   .burger_logo {
     margin-left: 0px;
@@ -1531,7 +1527,6 @@ input[type='range']::-webkit-slider-thumb {
     margin-top: 33px;
   }
   .watch .wrapper {
-    /* width: 93%; */
     overflow: visible;
   }
   .watch .wrapper,
@@ -1545,7 +1540,7 @@ input[type='range']::-webkit-slider-thumb {
     font-size: 2.8rem;
     width: 128px;
     margin-top: 42px;
-    margin-right: 3px;
+    margin-right: 0px;
   }
   .watch p::before {
     width: 119px;
@@ -1555,10 +1550,10 @@ input[type='range']::-webkit-slider-thumb {
     top: -19px;
   }
   .watch .button1 {
-    margin-left: 0;
+    margin: 0 auto;
     position: relative;
-    top: 68px;
-    left: 3px;
+    top: 60px;
+    left: 0px;
     z-index: 2;
   }
 
@@ -1570,7 +1565,6 @@ input[type='range']::-webkit-slider-thumb {
   }
   .backstage .wrapper {
     padding-top: 104px;
-    /* width: 95%; */
   }
   .backstage h2 {
     font-size: 2.4rem;
@@ -1652,12 +1646,12 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 @media (max-width: 450px) {
-  header,
+  /* header,
   main,
   footer {
     padding-left: 10px;
     padding-right: 10px;
-  }
+  } */
   /* header section */
   .logo.burger_logo {
     margin-left: 0;
