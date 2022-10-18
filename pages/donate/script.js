@@ -2,10 +2,10 @@
 const desktopSize = 1250;
 const tabletSize = 755;
 const mobileSize = 450;
-let screenType;
+let screenType = getCurScreenType();
 
 // burger menu
-const iconMenu = document.querySelector('.menu_icon');
+const iconMenu = document.querySelector('.burger_icon');
 const menuBody = document.querySelector('.menu_body');
 const headerLogo = document.querySelector('header').querySelector('.logo');
 
@@ -26,13 +26,6 @@ menuBody.addEventListener('click', (e) => {
   }
 });
 
-// disable links to this page
-// for (let elem of document.querySelectorAll('.active-menu-item')) {
-//   elem.onclick = (e) => {
-//     e.preventDefault();
-//   };
-// }
-
 //show subscribe info
 document.querySelector('.subscribe').addEventListener('submit', (e) => {
   e.preventDefault();
@@ -43,75 +36,22 @@ document.querySelector('.subscribe').addEventListener('submit', (e) => {
   );
 });
 
-// price input-range
-let range = document.querySelector('[type="range"]');
-let prices = [25, 50, 100, 250, 500, 1000, 2000, 5000];
-let inputPrice = document.querySelector('[type="number"]');
-let pricesList = [];
-let priceUl;
-let rangeWrap;
-let rangeWrapList;
-let currentPrice;
+let inputPrice = document.querySelector('.input_price');
+let formAmount = document.querySelector('.chose_amount');
+let priceList = formAmount.querySelectorAll('label');
+let curPrice = formAmount.querySelector('.active_amount');
 
-//set initial range wrapper
-window.addEventListener('load', () => {
-  let screenSize = document.documentElement.clientWidth;
-  screenType = getCurScreenType();
-  if (screenSize > desktopSize) {
-    setInputRange(7);
-    createPriceList(7);
-    // createRangeWrapper(7);
-    pricesList[5].classList.add('active_price');
-    currentPrice = pricesList[5];
-    range.value = 5;
-    inputPrice.value = +pricesList[5].innerText;
-  } else if (screenSize > tabletSize) {
-    setInputRange(6);
-    createPriceList(6);
-    pricesList[4].classList.add('active_price');
-    currentPrice = pricesList[4];
-    range.value = 4;
-    inputPrice.value = +pricesList[4].innerText;
-  } else {
-    setInputRange(4);
-    createPriceList(4);
-    pricesList[2].classList.add('active_price');
-    currentPrice = pricesList[2];
-    range.value = 2;
-    inputPrice.value = +pricesList[2].innerText;
-  }
-});
-
-// create price value section
-function createPriceList(length) {
-  if (!priceUl) {
-    priceUl = document.createElement('ul');
-    priceUl.classList.add('price');
-  }
-  priceUl.innerHTML = '';
-  pricesList = [];
-
-  for (i = length; i >= 0; i--) {
-    let li = document.createElement('li');
-    li.innerText = prices[i];
-    pricesList.push(li);
-    priceUl.insertAdjacentElement('beforeend', li);
-  }
-
-  range.after(priceUl);
-}
-//set input range
-function setInputRange(i) {
-  range.setAttribute('max', i);
-}
-
-// show chosen price
-range.addEventListener('input', (e) => {
-  let value = e.target.value;
-  currentPrice.classList.remove('active_price');
-  currentPrice = pricesList[value];
-  currentPrice.classList.add('active_price');
-  inputPrice.value = +currentPrice.innerText;
+// chose price
+priceList.forEach((item) => {
+  item.addEventListener('click', (e) => {
+    let el = e.currentTarget;
+    curPrice && curPrice.classList.remove('active_amount');
+    let val = el.children[0].value;
+    el.classList.add('active_amount');
+    curPrice = el;
+    inputPrice.value = val;
+    e.preventDefault();
+  });
 });
 
 //get current screen type
@@ -123,34 +63,32 @@ function getCurScreenType() {
     ? 'smallDesktop'
     : 'tablet';
 }
+
 // change chosen price after resize screen
 window.addEventListener('resize', () => {
   let curScreenType = getCurScreenType();
   if (curScreenType == screenType) return;
 
-  let i;
-  if (screenType == 'desktop' && curScreenType == 'smallDesktop') {
-    i = +range.value == 0 ? 4 : +range.value - 1;
-    setInputRange(6);
-    createPriceList(6);
-  } else if (screenType == 'smallDesktop' && curScreenType == 'desktop') {
-    i = +range.value + 1;
-    setInputRange(7);
-    createPriceList(7);
-  } else if (screenType == 'smallDesktop' && curScreenType == 'tablet') {
-    i = +range.value < 2 ? 2 : +range.value - 2;
-    setInputRange(4);
-    createPriceList(4);
-  } else {
-    i = +range.value + 2;
-    setInputRange(6);
-    createPriceList(6);
-  }
+  if (
+    screenType == 'desktop' &&
+    curScreenType == 'smallDesktop' &&
+    +curPrice.children[0].value === 5000
+  ) {
+    curPrice.classList.remove('active_amount');
+    curPrice = formAmount.querySelector('[data-amount="$100"]');
+    curPrice.classList.add('active_amount');
 
-  pricesList[i].classList.add('active_price');
-  currentPrice = pricesList[i];
-  range.value = i;
-  inputPrice.value = +pricesList[i].innerText;
+    inputPrice.value = 100;
+  } else if (
+    screenType == 'smallDesktop' &&
+    curScreenType == 'tablet' &&
+    +curPrice.children[0].value === 2000
+  ) {
+    curPrice.classList.remove('active_amount');
+    curPrice = formAmount.querySelector('[data-amount="$100"]');
+    curPrice.classList.add('active_amount');
+    inputPrice.value = 100;
+  }
   screenType = curScreenType;
 });
 
@@ -158,17 +96,16 @@ window.addEventListener('resize', () => {
 inputPrice.addEventListener('input', (e) => {
   e.target.value =
     e.target.value.length > 4 ? e.target.value.slice(0, 4) : e.target.value;
-  pricesList.forEach((el, i) => {
-    if (el.innerText === e.target.value) {
-      currentPrice.classList.remove('active_price');
-      currentPrice = pricesList[i];
-      currentPrice.setAttribute('class', 'active_price');
-      range.value = i;
-    } else {
-      pricesList[i].classList.remove('active_price');
+  priceList.forEach((el, i) => {
+    if (el.children[0].value === e.target.value && el !== curPrice) {
+      curPrice && curPrice.classList.remove('active_amount');
+      el.classList.add('active_amount');
+      curPrice = el;
+    } else if (el == curPrice) {
+      el.classList.remove('active_amount');
+      curPrice = null;
     }
   });
-  console.log('----------------------------');
 });
 
 //show submit donate data

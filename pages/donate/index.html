@@ -8,39 +8,41 @@
     <title>Donate</title>
   </head>
   <body>
-    <!-- header section -->
-    <header class="header">
+    <!-- Header section -->
+    <header>
       <div class="wrapper">
         <h1 class="logo">
-          <a href="../main/index.html">PetStory online</a>
+          <a href="../../pages/main/index.html">PetStory online</a>
         </h1>
         <div class="menu">
-          <div class="menu_icon">
-            <span></span>
-          </div>
           <nav class="menu_body">
             <ul>
-              <li>
-                <a href="../main/index.html">About</a>
-              </li>
+              <li><a href="#">About</a></li>
               <li><a href="../map/index.html">Map</a></li>
               <li><a href="#">Zoos</a></li>
               <li>
-                <a href="#" class="active-menu-item">Donate</a>
+                <a class="active-menu-item" href="../donate/index.html"
+                  >Donate</a
+                >
               </li>
-              <li><a href="#">Contuct us</a></li>
+              <li><a href="#">Contact us</a></li>
+              <li>
+                <a
+                  href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks"
+                  >Designed by <span>&copy;</span></a
+                >
+              </li>
             </ul>
-            <a
-              class="author"
-              href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks"
-              >Designed by <span>&copy;</span></a
-            >
           </nav>
+          <div class="burger_icon">
+            <span></span>
+          </div>
         </div>
       </div>
     </header>
+
     <!-- watch section -->
-    <section class="watchWrapper">
+    <section class="watch">
       <div class="wrapper"></div>
     </section>
 
@@ -82,7 +84,36 @@
           </div>
           <form action="" class="amount">
             <p>Amount</p>
-            <input type="range" min="0" max="7" step="1" />
+            <fieldset class="chose_amount">
+              <label data-amount="$5000"
+                ><input name="amount" type="radio" value="5000" /> <span></span
+              ></label>
+              <label data-amount="$2000"
+                ><input name="amount" type="radio" value="2000" /><span></span
+              ></label>
+              <label data-amount="$1000"
+                ><input name="amount" type="radio" value="1000" /><span></span
+              ></label>
+              <label data-amount="$500"
+                ><input name="amount" type="radio" value="500" /><span></span
+              ></label>
+              <label data-amount="$250"
+                ><input name="amount" type="radio" value="250" /><span></span
+              ></label>
+              <label data-amount="$100" class="active_amount"
+                ><input
+                  name="amount"
+                  type="radio"
+                  value="100"
+                  checked /><span></span
+              ></label>
+              <label data-amount="$50"
+                ><input name="amount" type="radio" value="50" /><span></span
+              ></label>
+              <label data-amount="$25"
+                ><input name="amount" type="radio" value="25" /><span></span
+              ></label>
+            </fieldset>
             <div>
               <label class="input_price_label">
                 <input
@@ -90,6 +121,7 @@
                   type="number"
                   placeholder="Another amount"
                   max="9999"
+                  value="100"
                 />
               </label>
             </div>
@@ -121,7 +153,7 @@
       <div class="wrapper">
         <div class="sub1">
           <div class="logo">
-            <a href="../main/index.html">PetStory <span>online</span></a>
+            <a href="#">PetStory <span>online</span></a>
           </div>
           <form class="subscribe" action="#">
             <h4>Subscribe to our news</h4>
@@ -137,7 +169,7 @@
           </form>
         </div>
         <div class="sub2">
-          <a href="#" class="button2 button_color_default">
+          <a href="../donate/index.html" class="button2 button_color_default">
             DONATE FOR VOLUNTEERS
           </a>
         </div>
@@ -160,7 +192,7 @@
           </div>
           <nav class="footer_menu">
             <ul>
-              <li><a href="../main/index.html">About</a></li>
+              <li><a href="#">About</a></li>
               <li><a href="../map/index.html">Map</a></li>
               <li><a href="#">Zoos</a></li>
               <li><a href="#">Contact us</a></li>
