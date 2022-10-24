@@ -273,6 +273,7 @@ button {
     padding-top: 72px;
     padding-bottom: 17px;
     overflow: auto;
+    min-height: 370px;
   }
   .animals-map .wrapper {
     padding: 0;
