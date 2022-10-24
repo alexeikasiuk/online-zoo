@@ -995,16 +995,21 @@ header .wrapper {
 }
 .copy {
   font-weight: 100;
+  width: 220px;
 }
-.copy:active p {
+.copy a:active,
+.copy a:hover {
   color: #4b9200;
   text-decoration: underline;
 }
-.copy p {
+.copy {
   color: rgba(255, 255, 255, 0.4);
   font-size: 1.6rem;
 }
-.copy p:last-child {
+.copy a {
+  display: block;
+}
+.copy a:last-child {
   margin-top: 8px;
   margin-bottom: -1px;
 }
@@ -1782,16 +1787,6 @@ header .wrapper {
   }
   .sub2 a {
     margin: 0 auto;
-  }
-  .copy {
-    margin-bottom: 40px;
-  }
-  .copy p {
-    font-size: 1.5rem;
-    line-height: 120%;
-  }
-  .copy p:last-child {
-    margin-top: 13px;
   }
   .footer_menu {
     margin-right: 0;

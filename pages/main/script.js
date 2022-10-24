@@ -297,6 +297,7 @@ document.querySelectorAll('.wrap_story').forEach((item) => {
   });
 });
 
+// subscribe form
 document.onsubmit = (e) => {
   e.preventDefault();
   alert(
