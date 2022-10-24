@@ -1,3 +1,3 @@
 # online-zoo
 
-[github-pages](https://alexeikasiuk.github.io/online-zoo/pages/main/index.html)
+github-pages: [online-zoo](https://alexeikasiuk.github.io/online-zoo/pages/main/index.html)
