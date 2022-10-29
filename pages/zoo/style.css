@@ -16,6 +16,9 @@ body {
 ._lock {
   overflow: hidden;
 }
+.active-color {
+  color: #4b9200;
+}
 header,
 footer {
   color: #fff;
@@ -173,6 +176,171 @@ header .wrapper {
 }
 .menu_body li:last-of-type a {
   margin-right: 0;
+}
+
+/* prime-video section */
+.prime-video {
+  padding-top: 57px;
+}
+
+.prime-video .wrapper {
+  position: relative;
+}
+
+/* pets navigation */
+.pets-navigation {
+  position: absolute;
+  left: -190px;
+  top: 67px;
+  padding: 6px 0;
+  border-radius: 5px;
+  background: linear-gradient(
+      315.75deg,
+      rgba(254, 210, 144, 0.7) 30.06%,
+      #febdab 100.95%,
+      rgba(254, 210, 144, 0.7) 106.36%
+    ),
+    linear-gradient(
+      315.75deg,
+      rgba(254, 189, 171, 0.74) 30.06%,
+      rgba(243, 169, 248, 0.66) 50.74%,
+      #e0d8f0 80.49%,
+      #eaf7fe 127.9%,
+      #eaf7fe 149.54%
+    ),
+    linear-gradient(
+      315.75deg,
+      rgba(254, 189, 171, 0.74) 30.06%,
+      rgba(243, 169, 248, 0.66) 50.74%,
+      #e0d8f0 80.49%,
+      #eaf7fe 127.9%,
+      #eaf7fe 149.54%
+    );
+}
+.pet {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  border: 2px solid #fe9013;
+  margin: 10px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pet:hover {
+  border-color: #4b9200;
+}
+.gorilla {
+  background: url(../../assets/icons/zoo/gorilla.png) 50% no-repeat #fff;
+}
+.gorilla:hover {
+  background: url(../../assets/icons/zoo/gorilla2.png) 50% no-repeat #fff;
+}
+.alligator {
+  background: url(../../assets/icons/zoo/alligator.png) 50% no-repeat #fff;
+}
+.alligator:hover {
+  background: url(../../assets/icons/zoo/alligator2.png) 50% no-repeat #fff;
+}
+.panda {
+  background: url(../../assets/icons/zoo/panda.png) 50% no-repeat #fff;
+}
+.panda:hover {
+  background: url(../../assets/icons/zoo/panda2.png) 50% no-repeat #fff;
+}
+.eagle {
+  background: url(../../assets/icons/zoo/eagle.png) 50% no-repeat #fff;
+}
+.eagle:hover {
+  background: url(../../assets/icons/zoo/eagle2.png) 50% no-repeat #fff;
+}
+.sloth {
+  background: url(../../assets/icons/zoo/sloth.png) 50% no-repeat #fff;
+}
+.sloth:hover {
+  background: url(../../assets/icons/zoo/sloth2.png) 50% no-repeat #fff;
+}
+.penguin {
+  background: url(../../assets/icons/zoo/penguin.png) 50% no-repeat #fff;
+}
+.penguin:hover {
+  background: url(../../assets/icons/zoo/penguin2.png) 50% no-repeat #fff;
+}
+.cheetah {
+  background: url(../../assets/icons/zoo/cheetah.png) 50% no-repeat #fff;
+}
+.cheetah:hover {
+  background: url(../../assets/icons/zoo/cheetah2.png) 50% no-repeat #fff;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 120%;
+  padding-bottom: 10px;
+}
+.video-container img {
+  width: 100%;
+}
+
+/* slider section */
+.pets-slider {
+  padding: 80px 0 125px;
+}
+.slider {
+  position: relative;
+}
+.slider-window {
+  display: flex;
+  justify-content: space-between;
+}
+.slide {
+  width: 24%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.slide:hover {
+  box-shadow: 0 0 5px;
+}
+.slide img {
+  width: 100%;
+}
+.slider__button {
+  position: absolute;
+  top: Calc(50% - 31px);
+  width: 62px;
+  height: 62px;
+  border-radius: 31px;
+  transition: all 0.2s;
+}
+.slider__button:hover {
+  background-color: #e47209;
+}
+.slider__button:active {
+  background-color: #4b9200;
+}
+.prev {
+  left: -8%;
+  background: url(../../assets/icons/slider_arrow_prev.svg) 50% no-repeat;
+}
+.next {
+  right: -8%;
+  background: url(../../assets/icons/slider_arrow_next.svg) 50% no-repeat;
+}
+.slider__button:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: -1;
+  background: linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%);
 }
 
 /* Pet cards section */
@@ -430,6 +598,120 @@ header .wrapper {
   background: url(../../assets/images/pets_right_bg_1600.jpg) 50% no-repeat;
   background-size: cover;
 } */
+
+/* pet description section */
+.pet-description {
+  padding-bottom: 180px;
+  /* position: relative; */
+  box-shadow: 0 0 5px;
+}
+
+.main-description {
+  border-bottom: 1px solid #767474;
+  display: flex;
+  padding-bottom: 20px;
+}
+.main-description img {
+  width: 421px;
+}
+.main-description__content {
+  padding-left: 70px;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 140%;
+  color: #ababab;
+}
+.main-description__content p {
+  padding-bottom: 30px;
+}
+.main-description__content .button1 {
+  display: block;
+  margin: 0 auto;
+}
+
+/* secondary-description section */
+.secondary-description {
+  padding: 40px 0 72px;
+  transition: height 0.5s;
+  position: relative;
+  overflow: hidden;
+}
+.short::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 72px;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background: #fff;
+  box-shadow: 0 0 50px 25px #fff;
+}
+.short {
+  height: 370px;
+}
+.sub-title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+.description-item {
+  padding-bottom: 20px;
+}
+.description-item p {
+  padding-bottom: 10px;
+}
+.short-description {
+  display: flex;
+  align-items: baseline;
+}
+.read-more {
+  padding: 10px 28px;
+  border: 1px solid #333b41;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  z-index: 3;
+}
+
+/* donate section */
+.donate {
+  height: 390px;
+  background: url(../../assets/images/zoo/panda_bg_1600.jpg) 50% no-repeat;
+  background-size: cover;
+  padding-bottom: 60px;
+  position: relative;
+}
+.donate .wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.donate::before,
+.donate::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+.donate::before {
+  width: 306px;
+  height: 229px;
+  left: 0;
+  bottom: 100%;
+  background: url(../../assets/images/zoo/strelitzia_1600.jpg) 50% no-repeat;
+  background-size: cover;
+}
+.donate::after {
+  width: 200px;
+  height: 255px;
+  background: url(../../assets/images/zoo/leave_1600.jpg) 50% no-repeat;
+  right: 0;
+  bottom: 80%;
+  background-size: cover;
+}
 
 /* footer section */
 .footer {

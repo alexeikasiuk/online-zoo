@@ -30,3 +30,54 @@ document.onsubmit = (e) => {
     }`
   );
 };
+
+// show/hide description
+const showButton = document.querySelector('.read-more');
+const toggleDescription = (e) => {
+  const button = e.target;
+  const section = document.querySelector('.secondary-description');
+  // section.onfocus = () => console.log('onfocus');
+  // if (!section.classList.contains('show')) {
+  // button.innerText = 'Read Less';
+  // section.classList.add('show');
+  // section.style.heigh = 'auto';
+
+  // let height = section.clientHeight + 'px';
+
+  // section.style.height = '370px';
+
+  // setTimeout(() => {
+  //   section.style.height = height;
+  // });
+  // } else {
+  // button.innerText = 'Read More';
+  // section.style.height = '370px';
+
+  // section.addEventListener(
+  //   'transitionend',
+  //   () => {
+  //     section.classList.remove('show');
+  //     section.style.height = '';
+  //   },
+  //   {
+  //     once: true,
+  //   }
+  // );
+  // }
+  if (section.style.height) {
+    section.style.height = null;
+    section.classList.add('short');
+  } else {
+    section.style.height = section.scrollHeight + 'px';
+    section.addEventListener(
+      'transitionend',
+      () => {
+        section.classList.remove('short');
+      },
+      {
+        once: true,
+      }
+    );
+  }
+};
+showButton.addEventListener('click', toggleDescription);
