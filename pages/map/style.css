@@ -309,4 +309,8 @@ button {
     top: 55%;
     background: url(../../assets/images/map/panda4.png) 50% no-repeat;
   }
+  /* footer section */
+  .copy {
+    margin-bottom: 40px;
+  }
 }
