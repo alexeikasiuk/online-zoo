@@ -51,10 +51,12 @@ nav a:hover,
   background: url(../../assets/icons/bamboo_hover.svg) 50% no-repeat;
   cursor: pointer;
 }
-button {
+button,
+a {
   cursor: pointer;
   font-size: 1.6rem;
   line-height: 140%;
+  text-align: center;
 }
 .button1 {
   width: 100%;
@@ -602,8 +604,6 @@ header .wrapper {
 /* pet description section */
 .pet-description {
   padding-bottom: 180px;
-  /* position: relative; */
-  box-shadow: 0 0 5px;
 }
 
 .main-description {
