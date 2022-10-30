@@ -273,6 +273,7 @@ button {
     padding-top: 72px;
     padding-bottom: 17px;
     overflow: auto;
+    min-height: 370px;
   }
   .animals-map .wrapper {
     padding: 0;
@@ -307,5 +308,9 @@ button {
     left: 410px;
     top: 55%;
     background: url(../../assets/images/map/panda4.png) 50% no-repeat;
+  }
+  /* footer section */
+  .copy {
+    margin-bottom: 40px;
   }
 }
